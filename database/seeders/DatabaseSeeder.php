@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Reply;
 use App\Models\Thread;
 use Illuminate\Database\Seeder;
 
@@ -15,6 +16,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
-        (new ThreadtableSeeder)->run();
+        (new ReplytableSeeder)->run();
     }
 }
