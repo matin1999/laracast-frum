@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\threads;
+use App\Models\Thread;
 use Illuminate\Http\Request;
 
 class ThreadsController extends Controller
@@ -14,7 +14,8 @@ class ThreadsController extends Controller
      */
     public function index()
     {
-        //
+        $threads = Thread::latest()->get();
+        return view('threads.index')->with('threads',$threads);
     }
 
     /**
@@ -41,21 +42,21 @@ class ThreadsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\threads  $threads
+     * @param  \App\Models\thread  $thread
      * @return \Illuminate\Http\Response
      */
-    public function show(threads $threads)
+    public function show(thread $thread)
     {
-        //
+        return view('threads.show')->with('thread',$thread);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\threads  $threads
+     * @param  \App\Models\thread  $threads
      * @return \Illuminate\Http\Response
      */
-    public function edit(threads $threads)
+    public function edit(thread $threads)
     {
         //
     }
@@ -64,10 +65,10 @@ class ThreadsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\threads  $threads
+     * @param  \App\Models\thread  $threads
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, threads $threads)
+    public function update(Request $request, thread $threads)
     {
         //
     }
@@ -75,10 +76,10 @@ class ThreadsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\threads  $threads
+     * @param  \App\Models\thread  $threads
      * @return \Illuminate\Http\Response
      */
-    public function destroy(threads $threads)
+    public function destroy(thread $threads)
     {
         //
     }
