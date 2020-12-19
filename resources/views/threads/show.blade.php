@@ -29,7 +29,7 @@
             <div class="row justify-content-center">
 
             <div class="col-md-8">
-                <form method="post" action="{{route('add.reply',$thread->id)}}">
+                <form method="post" action="{{$thread->path().'/replies'}}">
                     @csrf
                     <div class="form-row">
                         <label for="body"></label>

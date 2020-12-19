@@ -10,7 +10,7 @@
                     <div class="card-body">
                         @foreach($threads as $thread)
                             <article>
-                                <a href="{{route('threads.show', $thread->id)}}"> <h4>{{$thread->title}}</h4></a>
+                                <a href="{{ $thread->path() }}"> <h4>{{$thread->title}}</h4></a>
                                 <div>{{$thread->body}}</div>
                             </article>
                             <br>

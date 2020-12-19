@@ -16,6 +16,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
+        (new ThreadtableSeeder)->run();
         (new ReplytableSeeder)->run();
+        (new UserTableSeeder)->run();
+        (new ChanneltableSeeder)->run();
     }
 }
